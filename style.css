@@ -1574,7 +1574,7 @@ ul.arrow {
 
 .filters {
   margin-bottom: 50px; }
-  .filters select {
+  .filters select , selectBox select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

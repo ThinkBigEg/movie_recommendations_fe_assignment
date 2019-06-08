@@ -21,6 +21,43 @@
 		<![endif]-->
 
 	</head>
+    
+    <style>
+        .multiselect {
+            width: 143px;
+        }
+
+        .selectBox {
+            position: relative;
+        }
+
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        #checkboxes {
+            position: absolute;
+            display: none;
+            border: 1px #1e90ff solid;
+            z-index: 1;
+        }
+
+        #checkboxes label {
+            display: block;
+            color: black;
+            padding: 0px 85px 0px 10px;
+            background-color: #e7e7e7;
+        }
+
+        #checkboxes label:hover {
+            background-color: #1e90ff;
+            color: white;
+        }
+    </style>
 
 	<body onload="getRandomMedia()">
 		
@@ -76,23 +113,32 @@
 
 
 						<div class="filters">
-							<select name="#" id="#" placeholder="Choose Category">
+                            <span class="multiselect">
+                                <span class="selectBox" onclick="showCheckboxes()">
+                                    <select name="#" id="#">
+                                        <option style="display:none;">Choose year</option>
+                                    </select>
+                                    <span class="overSelect"></span>
+                                </span>
+                                <span id="checkboxes">
+                                    <label for="one"><input type="checkbox" id="one" value = "#" />2012</label>
+                                    <label for="two"><input type="checkbox" id="two" value = "#" />2013</label>
+                                    <label for="three"><input type="checkbox" id="three" value = "#" />2014</label>
+                                </span>
+                            </span>
+							<select name="#" id="#">
+								<option value="#">Choose Category</option>
 								<option value="#">Action</option>
 								<option value="#">Drama</option>
 								<option value="#">Fantasy</option>
 								<option value="#">Horror</option>
 								<option value="#">Adventure</option>
 							</select>
-							<select name="#" id="#">
-								<option value="#">2012</option>
-								<option value="#">2013</option>
-								<option value="#">2014</option>
-							</select>
 
-							<form class="search-form" style="float: right">
-								<input id="search_input" type="text" placeholder="Search...">
-								<button type="button"><i class="fa fa-search"></i></button>
-							</form>
+                            <form class="search-form" style="float: right">
+                                <input id="search_input" type="text" placeholder="Search...">
+                                <button type="button"><i class="fa fa-search"></i></button>
+                            </form>
 						</div>
 
 
@@ -189,6 +235,21 @@
 		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/capp.js"></script>
+        <script>
+
+            var expanded = false;
+            function showCheckboxes() {
+              var checkboxes = document.getElementById("checkboxes");
+              if (!expanded) {
+                checkboxes.style.display = "block";
+                expanded = true;
+              } else {
+                checkboxes.style.display = "none";
+                expanded = false;
+              }
+            }
+            
+        </script>
 
 	</body>
 
