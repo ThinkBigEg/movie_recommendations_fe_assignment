@@ -20,7 +20,7 @@ As can be seen from the image below the features included are:
      - Our Pages on Different Social Media
    - Visitor Can Write His Email to send new news to him
 
-  ![alt text](P1.jpg)
-  ![alt text](P2.jpg)
+  ![alt text](P1.JPG)
+  ![alt text](P2.JPG)
 
 ##Have Fun
